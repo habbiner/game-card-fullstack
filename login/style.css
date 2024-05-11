@@ -1,0 +1,49 @@
+body {
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(fundo.jpg);
+}
+
+#app {
+    height: auto;
+    background-color: rgba(141, 172, 137, 0.46);
+}
+
+div {
+    margin: 30px 30px 30px 30px;
+}
+
+button {
+    margin-left: 30px;
+    height: 50px;
+    width: 310px;
+    border-radius: 5px;
+    font-size: 15px;
+    background-color: rgb(121, 162, 121);
+    box-shadow: 9px 7px 5px rgba(50, 50, 50, 0.77);
+}
+
+input {
+    height: 50px;
+    width: 300px;
+    background-color: rgba(250, 235, 215, 0.598);
+    box-shadow: 9px 7px 5px rgba(50, 50, 50, 0.77);
+}
+
+label {
+    font-size: 20px;
+    color: white;
+}
+
+.link-voltar {
+    margin-top: 20px;
+    text-align: center;
+}
+
+a {
+    color: white;
+    box-shadow: 9px 7px 5px rgba(50, 50, 50, 0.77);
+}

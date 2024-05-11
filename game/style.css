@@ -1,0 +1,108 @@
+body,
+html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../img/fundo.jpeg);
+}
+
+#app {
+    width: 100%;
+    text-align: center;
+}
+
+.personagem {
+    background-color: rgba(0, 0, 255, 0.479);
+    border: 2px solid #1a355e;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    margin: 0px 10px 0px 0%;
+    padding: 10px;
+    width: 300px;
+}
+
+.acoes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+}
+
+button {
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(245, 245, 245, 0.411);
+    cursor: pointer;
+    transition: background-color 0.7s, transform 0.2s;
+}
+
+button:hover {
+    background-color: white;
+    transform: translateY(-3px);
+}
+
+button:active {
+    transform: translateY(0px);
+}
+
+.barra-vida {
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    border-radius: 5px;
+    margin-bottom: 16px;
+}
+
+.sprite {
+    height: auto;
+    background-color: #ddd;
+}
+
+.cards {
+    width: 800px;
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+}
+
+.logs {
+    padding: 10px;
+    border: 2px solid #1a355e;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 255, 0.212);
+    width: 500px;
+    height: 400px;
+}
+
+.logs h1 {
+    margin: 0 0 10px;
+    color: white;
+}
+
+.logs ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    overflow-y: auto;
+    font-size: large;
+}
+
+.logs li {
+    margin-bottom: 5px;
+}
+
+.green {
+    background-color: green;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.red {
+    background-color: red;
+}
