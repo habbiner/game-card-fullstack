@@ -1,50 +1,38 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tela Login</title>
-    <link rel="stylesheet" href="login/style.css">
-</head>
-
-<body>
-    <div id="app">
-        <div v-if="isLoginVisible" class="tela-login">
-            <div>
-                <label for="email">EMAIL</label><br>
-                <input type="email" name="email" id="email">
-            </div>
-            <div>
-                <label for="senha">SENHA</label><br>
-                <input type="password" name="senha" id="senha">
-            </div>
-            <a href="game/index.html"><button><b>LOGIN</b></button></a>
-            <div class="link-voltar">
-                <a href="#" @click="toggleComponents">Criar Conta</a>
-            </div>
+<div id="app">
+    <!-- Conteúdo da tela de login -->
+    <div v-if="isLoginVisible" class="tela-login">
+        <!-- Campos de entrada de email e senha -->
+        <div>
+            <label for="email">EMAIL</label><br>
+            <input type="email" name="email" id="email">
         </div>
-        <div v-else class="tela-sign">
-            <div>
-                <label for="email">EMAIL</label><br>
-                <input type="email" name="email" id="email">
-            </div>
-            <div>
-                <label for="senha">SENHA</label><br>
-                <input type="password" name="senha" id="senha">
-            </div>
-            <div>
-                <label for="confirmarSenha">CONFIRMAR SENHA</label><br>
-                <input type="password" name="confirmarSenha" id="confirmarSenha">
-            </div>
-            <button><b>SING IN</b></button>
-            <div class="link-voltar">
-                <a href="#" @click="toggleComponents">Voltar para Login</a>
-            </div>
+        <div>
+            <label for="senha">SENHA</label><br>
+            <input type="password" name="senha" id="senha">
+        </div>
+        <!-- Botão para realizar o login -->
+        <button @click="realizarLogin"><b>LOGIN</b></button>
+        <!-- Link para alternar para a tela de cadastro -->
+        <div class="link-voltar">
+            <a href="#" @click="toggleComponents">Criar Conta</a>
         </div>
     </div>
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <script src="login/index.js"></script>
-</body>
-
-</html>
+    <!-- Conteúdo da tela de cadastro -->
+    <div v-else class="tela-sign">
+        <!-- Campos de entrada de email, senha e confirmação de senha -->
+        <div>
+            <label for="email">EMAIL</label><br>
+            <input type="email" name="email" id="email">
+        </div>
+        <div>
+            <label for="senha">SENHA</label><br>
+            <input type="password" name="senha" id="senha">
+        </div>
+        <!-- Botão para cadastrar o usuário -->
+        <button @click="cadastrarUsuario"><b>SING IN</b></button>
+        <!-- Link para alternar para a tela de login -->
+        <div class="link-voltar">
+            <a href="#" @click="toggleComponents">Voltar para Login</a>
+        </div>
+    </div>
+</div>

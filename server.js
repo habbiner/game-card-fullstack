@@ -19,7 +19,50 @@ app.use(express.json());
 
 app.use(express.static(path.join(__dirname)));
 
-// app.get()
+app.post('/signup', async (req, res) => {
+    const { email, senha } = req.body;
+
+    try {
+        // Aqui você pode adicionar lógica para verificar se o usuário já existe no banco de dados
+        
+        // Lógica para inserir o novo usuário no banco de dados
+        await sql.connect(config);
+        const request = new sql.Request();
+        await request.query(`
+            INSERT INTO Usuarios (Email, Senha) 
+            VALUES ('${email}', '${senha}');
+        `);
+        
+        res.status(200).send('Usuário cadastrado com sucesso.');
+    } catch (error) {
+        console.error('Erro ao cadastrar usuário:', error);
+        res.status(500).send('Erro ao cadastrar usuário.');
+    }
+});
+
+app.post('/login', async (req, res) => {
+    const { email, senha } = req.body;
+
+    try {
+        // Lógica para verificar se o usuário existe no banco de dados e se a senha está correta
+        await sql.connect(config);
+        const request = new sql.Request();
+        const result = await request.query(`
+            SELECT * FROM Usuarios 
+            WHERE Email = '${email}' AND Senha = '${senha}';
+        `);
+
+        if (result.recordset.length > 0) {
+            res.status(200).send('Login bem-sucedido.');
+        } else {
+            res.status(401).send('Credenciais inválidas.');
+        }
+    } catch (error) {
+        console.error('Erro ao fazer login:', error);
+        res.status(500).send('Erro ao fazer login.');
+    }
+});
+
 
 app.post('/atualizarVida', async (req, res) => {
     const { vidaHeroi, vidaVilao } = req.body;
